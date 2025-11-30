@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {font-family: arial;
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+      font-size: 25px;
+      background-image: url("images/banned_site.png");
+      background-size: cover;}
