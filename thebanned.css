@@ -1,11 +1,137 @@
 @charset "UTF-8";
 /* CSS Document */
 
-body {font-family: arial;
-      background-color: black;
-      color: white;
-      text-align: center;
-      padding-top: 100px;
-      font-size: 25px;
-      background-image: url("images/banned_site.png");
-      background-size: cover;}
+@font-face {
+	font-family: "Riforma";
+	src: url("fonts/RiformaLL-Regular.woff2");
+}
+	
+@font-face {
+	font-family: "Riformabold";
+	src: url("fonts/RiformaLL-Bold.woff2");
+	
+}
+
+
+
+body {
+	font-family: Riforma;
+    background-color: black;
+    color: white;
+    text-align: center;
+	padding: 0px;
+	margin: 0px;
+    font-size: 25px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+	width: 100%;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1 {
+	font-family: Riformabold
+}
+
+a {
+	color: white;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 50px;
+	align-items: center;
+	border-top-style: solid;
+	border-color: white;
+	border-width: 1px;
+	
+}
+
+.merci {
+	text-align: left;
+}
+
+.gras {
+	font-family: Riformabold
+}
+
+
+.intro {
+	width: 1000px;
+}
+
+.contact {
+	text-align: left;
+}
+
+  /* ── FLÈCHE SCROLL ── */
+  .scroll-cta {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    animation: float 2.4s ease-in-out infinite;
+    z-index: 10;
+  }
+ 
+  .scroll-cta__label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.55);
+    transition: color 0.3s;
+  }
+ 
+  .scroll-cta__ring {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s, background 0.3s;
+  }
+ 
+  .scroll-cta__ring svg {
+    width: 18px;
+    height: 18px;
+    stroke: rgba(255, 255, 255, 0.7);
+    transition: stroke 0.3s;
+  }
+ 
+  .scroll-cta:hover .scroll-cta__label {
+    color: rgba(255, 255, 255, 1);
+  }
+ 
+  .scroll-cta:hover .scroll-cta__ring {
+    border-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.08);
+  }
+ 
+  .scroll-cta:hover .scroll-cta__ring svg {
+    stroke: white;
+  }
+ 
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(8px); }
+  }
