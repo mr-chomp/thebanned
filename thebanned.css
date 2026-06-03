@@ -1,137 +1,245 @@
 @charset "UTF-8";
-/* CSS Document */
 
 @font-face {
-	font-family: "Riforma";
-	src: url("fonts/RiformaLL-Regular.woff2");
+  font-family: "Riforma";
+  src: url("fonts/RiformaLL-Regular.woff2");
 }
-	
+
 @font-face {
-	font-family: "Riformabold";
-	src: url("fonts/RiformaLL-Bold.woff2");
-	
+  font-family: "Riformabold";
+  src: url("fonts/RiformaLL-Bold.woff2");
 }
 
-
-
-body {
-	font-family: Riforma;
-    background-color: black;
-    color: white;
-    text-align: center;
-	padding: 0px;
-	margin: 0px;
-    font-size: 25px;
+/* ── BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-header {
-	width: 100%;
-}
-
-main {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
+body {
+  font-family: "Riforma", sans-serif;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
 }
 
 h1 {
-	font-family: Riformabold
+  font-family: "Riformabold", sans-serif;
+  font-size: clamp(28px, 5vw, 50px);
+}
+
+h2 {
+  font-family: "Riforma", sans-serif;
+  font-size: clamp(18px, 2.5vw, 25px);
+}
+
+p {
+  font-size: clamp(15px, 1.8vw, 18px);
 }
 
 a {
-	color: white;
+  color: white;
 }
 
+/* ── HEADER ── */
+header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: cover;
+}
+
+/* ── MAIN ── */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── INTRO ── */
+.intro {
+  width: min(1000px, 90%);
+  padding: 0 1rem;
+}
+
+.intro p {
+  text-align: left;
+}
+
+/* ── CONCERTS ── */
+.concerts {
+  width: 100%;
+  padding: 0 5%;
+  text-align: center;
+}
+
+.concerts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.date {
+  text-align: left;
+  padding: 1rem;
+}
+
+.date p {
+  margin-bottom: 0;
+}
+
+/* ── FOOTER ── */
 footer {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	padding: 50px;
-	align-items: center;
-	border-top-style: solid;
-	border-color: white;
-	border-width: 1px;
-	
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 50px 5%;
+  border-top: 1px solid white;
+  flex-wrap: wrap;
+}
+
+footer > * {
+  flex: 1;
+  min-width: 200px;
 }
 
 .merci {
-	text-align: left;
+  text-align: left;
 }
 
-.gras {
-	font-family: Riformabold
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.intro {
-	width: 1000px;
+.footer-logo img {
+  width: min(300px, 100%);
+  height: auto;
 }
 
 .contact {
-	text-align: left;
+  text-align: right;
 }
 
-  /* ── FLÈCHE SCROLL ── */
-  .scroll-cta {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
+.contact-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.contact-links img {
+  width: 50px;
+  height: auto;
+}
+
+.gras {
+  font-family: "Riformabold", sans-serif;
+}
+
+/* ── SCROLL CTA ── */
+.scroll-cta {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  animation: float 2.4s ease-in-out infinite;
+  z-index: 10;
+}
+
+.scroll-cta__ring {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.scroll-cta__ring svg {
+  width: 18px;
+  height: 18px;
+  stroke: rgba(255, 255, 255, 0.7);
+  transition: stroke 0.3s;
+}
+
+.scroll-cta:hover .scroll-cta__ring {
+  border-color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.scroll-cta:hover .scroll-cta__ring svg {
+  stroke: white;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ── RESPONSIVE ── */
+
+/* Tablette */
+@media (max-width: 900px) {
+  .concerts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    cursor: pointer;
-    animation: float 2.4s ease-in-out infinite;
-    z-index: 10;
+    text-align: center;
+    gap: 2.5rem;
   }
- 
-  .scroll-cta__label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: rgba(255, 255, 255, 0.55);
-    transition: color 0.3s;
+
+  .merci,
+  .contact {
+    text-align: center;
   }
- 
-  .scroll-cta__ring {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    display: flex;
-    align-items: center;
+
+  .contact-links {
     justify-content: center;
-    transition: border-color 0.3s, background 0.3s;
   }
- 
-  .scroll-cta__ring svg {
-    width: 18px;
-    height: 18px;
-    stroke: rgba(255, 255, 255, 0.7);
-    transition: stroke 0.3s;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .concerts-grid {
+    grid-template-columns: 1fr;
   }
- 
-  .scroll-cta:hover .scroll-cta__label {
-    color: rgba(255, 255, 255, 1);
+
+  .date {
+    padding-bottom: 1rem;
   }
- 
-  .scroll-cta:hover .scroll-cta__ring {
-    border-color: rgba(255, 255, 255, 0.9);
-    background: rgba(255, 255, 255, 0.08);
+
+  footer {
+    padding: 2rem 1.5rem;
   }
- 
-  .scroll-cta:hover .scroll-cta__ring svg {
-    stroke: white;
-  }
- 
-  @keyframes float {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50%       { transform: translateX(-50%) translateY(8px); }
-  }
+}
