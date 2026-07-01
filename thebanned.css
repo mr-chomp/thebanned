@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 @font-face {
   font-family: "Riforma";
   src: url("fonts/RiformaLL-Regular.woff2");
@@ -8,65 +7,48 @@
   font-family: "Riformabold";
   src: url("fonts/RiformaLL-Bold.woff2");
 }
-
 /* ── BASE ── */
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   font-family: "Riforma", sans-serif;
-  background-color: #000;
-  color: #fff;
+  background-color: black;
+  color: white;
   text-align: center;
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 25px;
 }
-
 h1 {
   font-family: "Riformabold", sans-serif;
-  font-size: clamp(26px, 4.5vw, 48px);
-  margin: 0;
+  font-size: clamp(28px, 5vw, 50px);
 }
-
 h2 {
   font-family: "Riforma", sans-serif;
-  font-size: clamp(16px, 2.2vw, 22px);
-  margin: 0 0 0.25rem;
+  font-size: clamp(18px, 2.5vw, 25px);
 }
-
 p {
-  font-size: clamp(14px, 1.6vw, 17px);
-  line-height: 1.65;
+  font-size: clamp(15px, 1.8vw, 18px);
 }
-
 a {
-  color: #fff;
+  color: white;
+}
+a:link {
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
-
-.gras {
-  font-family: "Riformabold", sans-serif;
-}
-
 /* ── HEADER ── */
-
 header {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
-
 .header-video {
   display: block;
   width: 100%;
@@ -74,9 +56,162 @@ header {
   max-height: 100vh;
   object-fit: cover;
 }
+/* ── MAIN ── */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* ── INTRO ── */
+.intro {
+  width: min(1000px, 90%);
+  padding: 0 1rem;
+}
+.intro p {
+  text-align: left;
+}
+/* ── MEMBRES ── */
+.biospersos {
+  width: 100%;
+  padding: 0 5%;
+}
 
+/* Grille de base : 4 colonnes égales */
+.membres-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.membre {
+  cursor: pointer;
+  text-align: center;
+}
+
+.membre-photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 3 / 4;
+}
+.membre-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.membre-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.membre-overlay span {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1;
+}
+.membre:hover .membre-overlay,
+.membre.open .membre-overlay {
+  opacity: 1;
+}
+.membre h2 {
+  margin: 0.75rem 0 0.25rem;
+}
+
+/* Bio cachée dans le DOM (contenu lu par JS) */
+.membre-bio {
+  display: none;
+}
+
+/* Panneau bio injecté par JS : occupe les 3 colonnes restantes sur la même ligne */
+.membre-bio-panel {
+  grid-column: span 3;
+  text-align: left;
+  padding: 1rem 1.5rem;
+  align-self: start;
+}
+.membre-bio-panel h2 {
+  margin-bottom: 0.75rem;
+}
+.membre-bio-panel p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* ── CONCERTS ── */
+.concerts {
+  width: 100%;
+  padding: 0 5%;
+  text-align: center;
+}
+.concerts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.date {
+  text-align: left;
+  padding: 1rem;
+}
+.date p {
+  margin-bottom: 0;
+}
+/* ── FOOTER ── */
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 50px 5%;
+  border-top: 1px solid white;
+  flex-wrap: wrap;
+}
+footer > * {
+  flex: 1;
+  min-width: 200px;
+}
+.merci {
+  text-align: left;
+}
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-logo img {
+  width: min(300px, 100%);
+  height: auto;
+}
+.contact {
+  text-align: right;
+}
+.contact-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.contact-links img {
+  width: 50px;
+  height: auto;
+}
+.gras {
+  font-family: "Riformabold", sans-serif;
+}
 /* ── SCROLL CTA ── */
-
 .scroll-cta {
   position: absolute;
   bottom: 2.5rem;
@@ -91,7 +226,6 @@ header {
   animation: float 2.4s ease-in-out infinite;
   z-index: 10;
 }
-
 .scroll-cta__ring {
   width: 48px;
   height: 48px;
@@ -102,80 +236,28 @@ header {
   justify-content: center;
   transition: border-color 0.3s, background 0.3s;
 }
-
 .scroll-cta__ring svg {
   width: 18px;
   height: 18px;
   stroke: rgba(255, 255, 255, 0.7);
   transition: stroke 0.3s;
 }
-
 .scroll-cta:hover .scroll-cta__ring {
   border-color: rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.08);
 }
-
 .scroll-cta:hover .scroll-cta__ring svg {
-  stroke: #fff;
+  stroke: white;
 }
-
 @keyframes float {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50%       { transform: translateX(-50%) translateY(8px); }
 }
-
-/* ── MAIN ── */
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* ── INTRO ── */
-
-.intro {
-  width: min(900px, 90%);
-  padding: 0 1rem;
-}
-
-.intro p {
-  text-align: left;
-}
-
-/* ── CONCERTS ── */
-
-.concerts {
-  width: 100%;
-  padding: 0 5%;
-  text-align: center;
-}
-
-.concerts-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.date {
-  text-align: left;
-  padding: 1rem;
-}
-
-.date p {
-  margin-bottom: 0;
-}
-
 /* ── PHOTOS ── */
-
 .photos {
   width: 100%;
-  padding: 0 4%;
+  padding: 0 5%;
 }
-
 .photos-grid {
   columns: 4;
   column-gap: 10px;
@@ -183,138 +265,77 @@ main {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .photo-item {
   break-inside: avoid;
   margin-bottom: 10px;
-  overflow: hidden;
-  border-radius: 4px;
 }
-
 .photo-item img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 4px;
 }
-
-/* ── FOOTER ── */
-
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  padding: 50px 5%;
-  margin-top: 4rem;
-  border-top: 1px solid #fff;
-  flex-wrap: wrap;
-}
-
-footer > * {
-  flex: 1;
-  min-width: 200px;
-}
-
-.merci {
-  text-align: left;
-}
-
-.merci p {
-  margin: 0;
-  line-height: 1.9;
-}
-
-.footer-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-logo img {
-  width: min(260px, 100%);
-  height: auto;
-}
-
-.contact {
-  text-align: right;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-top: 0.75rem;
-}
-
-.contact-links img {
-  width: 44px;
-  height: auto;
-  transition: opacity 0.2s;
-}
-
-.contact-links a:hover img {
-  opacity: 0.75;
-}
-
 /* ── RESPONSIVE ── */
-
-/* Tablette large */
-@media (max-width: 1024px) {
-  .photos-grid {
-    columns: 3;
-  }
-}
-
 /* Tablette */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .membres-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .membre-bio-panel {
+    grid-column: 1 / -1;
+    padding: 0.5rem 0 1rem;
+  }
   .concerts-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .photos-grid {
     columns: 2;
     column-gap: 8px;
   }
-
   .photo-item {
     margin-bottom: 8px;
   }
-
   footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 2.5rem;
   }
-
   .merci,
   .contact {
     text-align: center;
   }
-
   .contact-links {
     justify-content: center;
   }
 }
-
 /* Mobile */
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+  .membres-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .membre-bio-panel {
+    grid-column: 1 / -1;
+  }
+	
+	
+	
+	
   .concerts-grid {
     grid-template-columns: 1fr;
   }
-
   .photos-grid {
     columns: 2;
     column-gap: 6px;
   }
-
   .photo-item {
     margin-bottom: 6px;
   }
-
+  .date {
+    padding-bottom: 1rem;
+  }
   footer {
-    padding: 2rem 1.25rem;
+    padding: 2rem 1.5rem;
   }
 }
