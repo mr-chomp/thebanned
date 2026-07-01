@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>The Banned</title>
+<title>thebanned</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="thebanned.css">
@@ -12,12 +12,10 @@
 <body>
 
 <header>
-  <video autoplay loop muted playsinline class="header-video">
-    <source src="images/videointro.mp4" type="video/mp4">
-  </video>
-  <a class="scroll-cta" href="#content" aria-label="Défiler vers le contenu">
+  <video autoplay loop muted playsinline class="header-video"><source src="images/videointro.mp4" type="video/mp4"></video>
+  <a class="scroll-cta" href="#content">
     <div class="scroll-cta__ring">
-      <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3.5 7l5.5 5.5L14.5 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
@@ -27,8 +25,58 @@
 <main>
 
   <section id="content" class="intro">
-    <h1 class="mb-4 mt-5">Qui sommes-nous&nbsp;?</h1>
-    <p>The BANNED c'est un groupe de rock alternatif neuchâtelois composé de 4 jeunes gens jonglant entre études et musique. Inspirés d'artistes allant de Muse aux Red Hot Chili Peppers, en ne passant pas du tout par Georges Brassens, ce groupe plein d'énergie et de passion pour la musique se réjouit de rocker avec vous&nbsp;!</p>
+    <h1 class="mb-5 mt-5">Qui sommes-nous ?</h1>
+    <p>The BANNED c'est un groupe de rock alternatif neuchâtelois composé de 4 jeunes gens jonglant entre études et musique. Inspirés d'artistes allant de Muse aux Red Hot Chili Peppers, en ne passant pas du tout par Georges Brassens, ce groupe plein d'énergie et de passion pour la musique se réjouit de rocker avec vous !</p>
+  </section>
+
+  <section class="biospersos">
+    <div class="membres-grid">
+
+      <div class="membre" onclick="toggleBio(this)">
+        <div class="membre-photo">
+          <img src="images/anokhi.jpg" alt="Anokhi">
+          <div class="membre-overlay"><span>+</span></div>
+        </div>
+        <h2>Anokhi</h2>
+        <div class="membre-bio">
+          <p>Depuis l'âge de 11 ans, Anokhi transforme sa passion en énergie pure sur scène. Entre le chant, la danse, le piano, l'écriture de paroles et la composition de mélodies vocales, elle construit un univers artistique unique, sincère et vibrant. Grâce à son parcours à BBM 74 et à ses nombreuses tournées et concerts, elle cherche à faire de chaque performance un moment de partage avec le public. Créative, expressive et authentique, Anokhi fait rayonner sa voix avec cœur et ferveur.</p>
+        </div>
+      </div>
+
+      <div class="membre" onclick="toggleBio(this)">
+        <div class="membre-photo">
+          <img src="images/livio.jpg" alt="Livio">
+          <div class="membre-overlay"><span>+</span></div>
+        </div>
+        <h2>Livio</h2>
+        <div class="membre-bio">
+          <p>Livio a commencé la guitare classique à 10 ans avant de se tourner vers l'électrique deux ans plus tard, inspiré par les influences rock de ses parents. Ayant grandi au son de groupes comme AC/DC, Muse ou les Red Hot Chili Peppers, sa curiosité l'a progressivement amené à s'intéresser à d'autres styles de musique, comme le rap, le jazz ou la musique classique, ainsi qu'à découvrir de nouveaux instruments tels que la basse et le piano. Pour Livio, la musique est un univers riche et sans fin, grâce auquel il peut exprimer ses émotions, les transmettre aux autres et explorer sa créativité.</p>
+        </div>
+      </div>
+
+      <div class="membre" onclick="toggleBio(this)">
+        <div class="membre-photo">
+          <img src="images/tom.jpg" alt="Tom">
+          <div class="membre-overlay"><span>+</span></div>
+        </div>
+        <h2>Tom</h2>
+        <div class="membre-bio">
+          <p>La musique est un espace où même les personnes les plus discrètes peuvent s'exprimer et rayonner. Tom en est la preuve vivante. Réservé dans la vie de tous les jours, il se transforme complètement dès qu'il prend sa guitare en main. Sur scène, il ne joue pas seulement des notes : il transmet une énergie, une émotion et une passion qu'il offre au public. Chaque solo improvisé raconte ses heures de travail, sa persévérance et l'amour qu'il met dans sa musique. Toujours prêt à se dépasser, Tom a appris la basse pour soutenir le groupe et enrichir le projet collectif.</p>
+        </div>
+      </div>
+
+      <div class="membre" onclick="toggleBio(this)">
+        <div class="membre-photo">
+          <img src="images/vitto.jpg" alt="Vittorio">
+          <div class="membre-overlay"><span>+</span></div>
+        </div>
+        <h2>Vittorio</h2>
+        <div class="membre-bio">
+          <p>Musicien depuis l'âge de 6 ans, d'abord avec le violon, Vittorio a trouvé sa véritable voie à douze ans en s'installant derrière une batterie. Une passion sans doute héritée de son père, lui-même batteur dans un groupe de rock, mais que Vittorio a su faire sienne en apprenant en autodidacte, à force d'écoute, d'instinct et d'heures passées derrière les fûts. Sur scène, son objectif est simple et sincère : kiffer, et transmettre cette énergie au public jusqu'à la dernière note. Entre puissance et précision, Vittorio est le moteur qui fait vibrer le groupe.</p>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <section class="concerts mb-5">
@@ -66,69 +114,45 @@
   <section class="photos">
     <h1 class="mb-5 mt-5">Photos</h1>
     <div class="photos-grid">
-      <div class="photo-item">
-        <img src="images/PHOTO-2026-06-14-15-13-14 3.jpg" alt="The Banned en concert" loading="lazy">
-      </div>
-      <div class="photo-item">
-        <img src="images/PHOTO-2026-06-14-15-13-15 2.jpg" alt="The Banned en concert" loading="lazy">
-      </div>
-      <div class="photo-item">
-        <img src="images/PHOTO-2026-06-14-15-13-16 4.jpg" alt="The Banned en concert" loading="lazy">
-      </div>
-      <div class="photo-item">
-        <img src="images/PHOTO-2026-06-14-15-13-17.jpg" alt="The Banned en concert" loading="lazy">
-      </div>
-      <div class="photo-item">
-        <img src="images/PHOTO-2026-06-14-15-13-18 2.jpg" alt="The Banned en concert" loading="lazy">
-      </div>
-      <div class="photo-item">
-        <img src="images/PHOTO-2026-06-14-15-13-18 4.jpg" alt="The Banned en concert" loading="lazy">
-      </div>
-      <div class="photo-item">
-        <img src="images/PHOTO-2026-06-14-15-13-20 3.jpg" alt="The Banned en concert" loading="lazy">
-      </div>
-      <div class="photo-item">
-        <img src="images/PHOTO-2026-06-14-15-13-23 2.jpg" alt="The Banned en concert" loading="lazy">
-      </div>
-      <div class="photo-item">
-        <img src="images/PHOTO-2026-06-14-15-13-26 2.jpg" alt="The Banned en concert" loading="lazy">
-      </div>
-      <div class="photo-item">
-        <img src="images/PHOTO-2026-06-14-15-13-27.jpg" alt="The Banned en concert" loading="lazy">
-      </div>
+      <div class="photo-item"><img src="images/PHOTO-2026-06-14-15-13-14 3.jpg" alt=""/></div>
+      <div class="photo-item"><img src="images/livio.jpg" alt=""/></div>
+      <div class="photo-item"><img src="images/PHOTO-2026-06-14-15-13-16 4.jpg" alt=""/></div>
+      <div class="photo-item"><img src="images/anokhi.jpg" alt=""/></div>
+      <div class="photo-item"><img src="images/tom.jpg" alt=""/></div>
+      <div class="photo-item"><img src="images/PHOTO-2026-06-14-15-13-18 4.jpg" alt=""/></div>
+      <div class="photo-item"><img src="images/PHOTO-2026-06-14-15-13-20 3.jpg" alt=""/></div>
+      <div class="photo-item"><img src="images/PHOTO-2026-06-14-15-13-23 2.jpg" alt=""/></div>
+      <div class="photo-item"><img src="images/PHOTO-2026-06-14-15-13-26 2.jpg" alt=""/></div>
+      <div class="photo-item"><img src="images/PHOTO-2026-06-14-15-13-27.jpg" alt=""/></div>
     </div>
-  
-	<p style="text-align: left;">Photos de Audrey Gerber</p>
-</section>
+  </section>
 
 </main>
 
 <footer>
   <div class="merci">
     <h1>Nous remercions</h1>
-    <p>
-      Nos familles et nos amis<br>
-      BBM 74 et leurs professeurs géniaux<br>
-      Festi'neuch<br>
-      La Case à Chocs<br>
-      Centre de Loisirs, Neuchâtel<br>
-      Raphaël Noir<br>
-      Magoo<br>
-      Zephyr Walmsley<br>
-      Hayden Moreau
-    </p>
+    <p>Nos familles et nos amis<br>
+    BBM 74 et leurs professeurs géniaux<br>
+    Festi'neuch<br>
+    La Case à Chocs<br>
+    Centre de Loisirs, Neuchâtel<br>
+    Raphaël Noir<br>
+    Magoo<br>
+    Zephyr Walmsley<br>
+    Hayden Moreau</p>
   </div>
   <a href="index.html" class="footer-logo">
-    <img src="images/banned_logo_blanc.png" alt="The Banned – retour à l'accueil">
+    <img src="images/banned_logo_blanc.png" alt="logo">
   </a>
   <div class="contact">
     <h1>Nous contacter</h1>
     <div class="contact-links">
-      <a href="https://www.instagram.com/the_banned_official_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram">
-        <img src="images/instagram-white-icon.webp" alt="Instagram">
+      <a href="https://www.instagram.com/the_banned_official_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+        <img src="images/instagram-white-icon.webp" alt="instagram">
       </a>
-      <a href="mailto:thebannedofficialmusic@gmail.com" aria-label="Envoyer un email">
-        <img src="images/447037.png" alt="Email">
+      <a href="mailto:thebannedofficialmusic@gmail.com">
+        <img src="images/447037.png" alt="mail">
       </a>
     </div>
   </div>
