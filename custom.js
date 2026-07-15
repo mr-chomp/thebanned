@@ -43,3 +43,28 @@ function toggleBio(el) {
 
   grid.appendChild(panel);
 }
+
+function toggleSong(button) {
+  const song = button.closest('.song');
+  const details = song.querySelector('.song-details');
+  const isOpen = song.classList.contains('open');
+
+  document.querySelectorAll('.song.open').forEach(openSong => {
+    const openDetails = openSong.querySelector('.song-details');
+    openSong.classList.remove('open');
+    openSong.querySelector('.song-header').setAttribute('aria-expanded', 'false');
+    openDetails.style.maxHeight = '0px';
+  });
+
+  if (!isOpen) {
+    song.classList.add('open');
+    button.setAttribute('aria-expanded', 'true');
+    details.style.maxHeight = details.scrollHeight + 'px';
+  }
+}
+
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.song.open .song-details').forEach(details => {
+    details.style.maxHeight = details.scrollHeight + 'px';
+  });
+});

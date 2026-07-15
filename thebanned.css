@@ -275,6 +275,95 @@ footer > * {
   height: auto;
   border-radius: 4px;
 }
+/* ── SONGS ── */
+.songs {
+  width: 100%;
+  padding: 0 5%;
+}
+.songs-list {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+.song {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.song-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.25rem 0;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  gap: 1rem;
+}
+.song-header h2 {
+  margin: 0;
+}
+.song-arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.song-arrow svg {
+  width: 18px;
+  height: 18px;
+  stroke: rgba(255, 255, 255, 0.7);
+  transition: stroke 0.3s;
+}
+.song-header:hover .song-arrow svg,
+.song.open .song-arrow svg {
+  stroke: white;
+}
+.song.open .song-arrow {
+  transform: rotate(180deg);
+}
+.song-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0;
+}
+.song.open .song-details {
+  padding-bottom: 1.5rem;
+}
+.song-author {
+  margin: 0 0 1rem;
+  font-size: clamp(14px, 1.6vw, 16px);
+  opacity: 0.75;
+}
+.song-lyrics {
+  margin-bottom: 1.25rem;
+}
+.song-lyrics p {
+  margin: 0;
+  line-height: 1.25;
+  white-space: pre-line;
+}
+.song-listen {
+  display: inline-block;
+  font-family: "Riformabold", sans-serif;
+  font-size: clamp(14px, 1.6vw, 16px);
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: border-color 0.3s, background 0.3s;
+}
+.song-listen:hover {
+  text-decoration: none;
+  border-color: white;
+  background: rgba(255, 255, 255, 0.08);
+}
+
 /* ── RESPONSIVE ── */
 /* Tablette */
 @media (max-width: 900px) {
