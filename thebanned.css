@@ -114,10 +114,17 @@ main {
   transition: opacity 0.3s ease;
 }
 .membre-overlay span {
-  font-size: 2.5rem;
+  font-size: 0;
   font-weight: 300;
   color: #fff;
   line-height: 1;
+}
+.membre-overlay span::before {
+  font-size: 2.5rem;
+  content: '+';
+}
+.membre.open .membre-overlay span::before {
+  content: '−';
 }
 .membre:hover .membre-overlay,
 .membre.open .membre-overlay {
@@ -258,6 +265,92 @@ footer > * {
   width: 100%;
   padding: 0 5%;
 }
+.photo-events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.photo-events-grid--row {
+  margin-top: 2.5rem;
+}
+.photo-event {
+  cursor: pointer;
+  text-align: center;
+}
+.photo-event-thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 3 / 4;
+}
+.photo-event-thumb img,
+.photo-event-thumb video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.photo-event-thumb video {
+  pointer-events: none;
+}
+.photo-event-thumb--placeholder {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.photo-event-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.photo-event-overlay span {
+  font-size: 0;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1;
+}
+.photo-event-overlay span::before {
+  font-size: 2.5rem;
+  content: '+';
+}
+.photo-event.open .photo-event-overlay span::before {
+  content: '−';
+}
+.photo-event:hover .photo-event-overlay,
+.photo-event.open .photo-event-overlay {
+  opacity: 1;
+}
+.photo-event h2,
+.photo-event-panel h2 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: clamp(16px, 2vw, 22px);
+}
+.photo-event-panel h3 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: clamp(10px, 1.5vw, 16px);
+}
+.photo-event-gallery {
+  display: none;
+}
+.photo-event-panel {
+  grid-column: span 1;
+  text-align: left;
+  padding: 0 0 0 1rem;
+  align-self: start;
+}
+.photo-event-panel h2 {
+  margin-bottom: 1rem;
+}
+.photo-event-gallery .photos-grid + .photos-grid {
+  margin-top: 1.5rem;
+}
 .photos-grid {
   columns: 4;
   column-gap: 10px;
@@ -269,11 +362,59 @@ footer > * {
   break-inside: avoid;
   margin-bottom: 10px;
 }
-.photo-item img {
+.photo-item img,
+.photo-item video {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 4px;
+}
+.photo-item img {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.photo-item img:hover {
+  opacity: 0.85;
+}
+.photos-grid--videos {
+  columns: 2;
+}
+/* ── LIGHTBOX ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.92);
+}
+.lightbox.open {
+  display: flex;
+}
+.lightbox-image {
+  max-width: min(100%, 1200px);
+  max-height: calc(100vh - 4rem);
+  object-fit: contain;
+  border-radius: 4px;
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.5rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.lightbox-close:hover {
+  opacity: 1;
 }
 /* ── SONGS ── */
 .songs {
@@ -378,9 +519,16 @@ footer > * {
   .concerts-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .photo-event-panel {
+    grid-column: 1 / -1;
+    padding: 0.5rem 0 1rem;
+  }
   .photos-grid {
     columns: 2;
     column-gap: 8px;
+  }
+  .photos-grid--videos {
+    columns: 1;
   }
   .photo-item {
     margin-bottom: 8px;
@@ -408,16 +556,19 @@ footer > * {
   .membre-bio-panel {
     grid-column: 1 / -1;
   }
-	
-	
-	
-	
+  .photo-event-panel {
+    grid-column: 1 / -1;
+    padding: 0.5rem 0 1rem;
+  }
   .concerts-grid {
     grid-template-columns: 1fr;
   }
   .photos-grid {
     columns: 2;
     column-gap: 6px;
+  }
+  .photos-grid--videos {
+    columns: 1;
   }
   .photo-item {
     margin-bottom: 6px;
