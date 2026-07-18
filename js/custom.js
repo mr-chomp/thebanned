@@ -142,6 +142,28 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
 });
 
+function initHeaderVideo() {
+  const video = document.querySelector('.header-video');
+  if (!video) return;
+
+  video.muted = true;
+
+  const tryPlay = () => {
+    const playAttempt = video.play();
+    if (playAttempt !== undefined) {
+      playAttempt.catch(() => {});
+    }
+  };
+
+  if (video.readyState >= 2) {
+    tryPlay();
+  } else {
+    video.addEventListener('loadeddata', tryPlay, { once: true });
+  }
+}
+
+initHeaderVideo();
+
 window.addEventListener('resize', () => {
   document.querySelectorAll('.song.open .song-details').forEach(details => {
     setAccordionHeight(details);
