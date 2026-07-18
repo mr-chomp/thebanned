@@ -217,6 +217,13 @@ footer > * {
   width: 50px;
   height: auto;
 }
+.footer-copyright {
+  flex: 1 1 100%;
+  text-align: center;
+  margin: 1.5rem 0 0;
+  font-size: clamp(12px, 1.4vw, 14px);
+  opacity: 0.75;
+}
 .gras {
   font-family: "Riformabold", sans-serif;
 }
