@@ -549,6 +549,9 @@ footer > * {
 /* ── RESPONSIVE ── */
 /* Tablette */
 @media (max-width: 900px) {
+  .header-video {
+    margin: 2rem 0px;
+  }
   .membres-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -589,6 +592,9 @@ footer > * {
 }
 /* Mobile */
 @media (max-width: 576px) {
+  .header-video {
+    margin: 3rem 0px;
+  }
   .membres-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
