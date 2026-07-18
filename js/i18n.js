@@ -1,5 +1,5 @@
 const I18N_STORAGE_KEY = 'thebanned-lang';
-const SUPPORTED_LANGS = ['fr', 'en'];
+const SUPPORTED_LANGS = ['fr', 'en', 'de'];
 
 let currentLang = 'fr';
 let strings = {};
@@ -7,11 +7,11 @@ let strings = {};
 function getPreferredLang() {
   const params = new URLSearchParams(window.location.search);
   const paramLang = params.get('lang');
-  if (paramLang === 'en' || paramLang === 'fr') {
+  if (SUPPORTED_LANGS.includes(paramLang)) {
     return paramLang;
   }
   const stored = localStorage.getItem(I18N_STORAGE_KEY);
-  if (stored === 'en' || stored === 'fr') {
+  if (SUPPORTED_LANGS.includes(stored)) {
     return stored;
   }
   return 'fr';
