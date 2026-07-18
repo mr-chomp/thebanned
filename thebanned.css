@@ -58,6 +58,33 @@ header {
   object-fit: cover;
   background-color: black;
 }
+.lang-switch {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.lang-switch__btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: "Riformabold", sans-serif;
+  font-size: clamp(14px, 1.6vw, 16px);
+  cursor: pointer;
+  padding: 0.25rem 0.35rem;
+  transition: color 0.2s ease;
+}
+.lang-switch__btn:hover,
+.lang-switch__btn.is-active {
+  color: white;
+}
+.lang-switch__sep {
+  color: rgba(255, 255, 255, 0.35);
+  user-select: none;
+}
 /* ── MAIN ── */
 main {
   display: flex;

@@ -12,11 +12,17 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
 <link rel="manifest" href="/favicon/site.webmanifest" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="js/i18n.js" defer></script>
 <script src="js/custom.js" defer></script>
 </head>
 <body>
 
 <header>
+  <nav class="lang-switch" data-i18n-aria="lang.label">
+    <button type="button" class="lang-switch__btn is-active" data-lang="fr" aria-pressed="true">FR</button>
+    <span class="lang-switch__sep" aria-hidden="true">|</span>
+    <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+  </nav>
   <video autoplay loop muted playsinline preload="auto" width="1920" height="1080" class="header-video">
     <source src="images/intro/videointro1080.mp4" type="video/mp4">
   </video>
@@ -32,8 +38,8 @@
 <main>
 
   <section id="content" class="intro">
-    <h1 class="mb-5 mt-5">Qui sommes-nous ?</h1>
-    <p>The BANNED : Quatre étudiants en semaine se métamorphosent dans leur temps libre et empoignent leurs instruments pour proposer une nouvelle vision du rock alternatif. Leur répertoire, constitué de compositions originales entièrement créées par les membres du groupe, est agrémenté de saveurs musicales multiples, entre autres grunge, pop et funk. Chaque création dévoile une facette de leur univers unique et épanoui.
+    <h1 class="mb-5 mt-5" data-i18n="intro.title">Qui sommes-nous ?</h1>
+    <p data-i18n="intro.text">The BANNED : Quatre étudiants en semaine se métamorphosent dans leur temps libre et empoignent leurs instruments pour proposer une nouvelle vision du rock alternatif. Leur répertoire, constitué de compositions originales entièrement créées par les membres du groupe, est agrémenté de saveurs musicales multiples, entre autres grunge, pop et funk. Chaque création dévoile une facette de leur univers unique et épanoui.
 Afin de communiquer pleinement leur passion pour la musique, ils diffuseront prochainement leurs deux premiers EPs sur toutes les plateformes.</p>
   </section>
 
@@ -47,7 +53,7 @@ Afin de communiquer pleinement leur passion pour la musique, ils diffuseront pro
         </div>
         <h2>Anokhi</h2>
         <div class="membre-bio">
-          <p>Depuis l'âge de 11 ans, Anokhi transforme sa passion en énergie pure sur scène. Entre le chant, la danse, le piano, l'écriture de paroles et la composition de mélodies vocales, elle construit un univers artistique unique, sincère et vibrant. Grâce à son parcours à BBM 74 et à ses nombreuses tournées et concerts, elle cherche à faire de chaque performance un moment de partage avec le public. Créative, expressive et authentique, Anokhi fait rayonner sa voix avec cœur et ferveur.</p>
+          <p data-i18n="bio.anokhi">Depuis l'âge de 11 ans, Anokhi transforme sa passion en énergie pure sur scène. Entre le chant, la danse, le piano, l'écriture de paroles et la composition de mélodies vocales, elle construit un univers artistique unique, sincère et vibrant. Grâce à son parcours à BBM 74 et à ses nombreuses tournées et concerts, elle cherche à faire de chaque performance un moment de partage avec le public. Créative, expressive et authentique, Anokhi fait rayonner sa voix avec cœur et ferveur.</p>
         </div>
       </div>
 
@@ -58,7 +64,7 @@ Afin de communiquer pleinement leur passion pour la musique, ils diffuseront pro
         </div>
         <h2>Livio</h2>
         <div class="membre-bio">
-          <p>Livio a commencé la guitare classique à 10 ans avant de se tourner vers l'électrique deux ans plus tard, inspiré par les influences rock de ses parents. Ayant grandi au son de groupes comme AC/DC, Muse ou les Red Hot Chili Peppers, sa curiosité l'a progressivement amené à s'intéresser à d'autres styles de musique, comme le rap, le jazz ou la musique classique, ainsi qu'à découvrir de nouveaux instruments tels que la basse et le piano. Pour Livio, la musique est un univers riche et sans fin, grâce auquel il peut exprimer ses émotions, les transmettre aux autres et explorer sa créativité.</p>
+          <p data-i18n="bio.livio">Livio a commencé la guitare classique à 10 ans avant de se tourner vers l'électrique deux ans plus tard, inspiré par les influences rock de ses parents. Ayant grandi au son de groupes comme AC/DC, Muse ou les Red Hot Chili Peppers, sa curiosité l'a progressivement amené à s'intéresser à d'autres styles de musique, comme le rap, le jazz ou la musique classique, ainsi qu'à découvrir de nouveaux instruments tels que la basse et le piano. Pour Livio, la musique est un univers riche et sans fin, grâce auquel il peut exprimer ses émotions, les transmettre aux autres et explorer sa créativité.</p>
         </div>
       </div>
 
@@ -69,7 +75,7 @@ Afin de communiquer pleinement leur passion pour la musique, ils diffuseront pro
         </div>
         <h2>Tom</h2>
         <div class="membre-bio">
-          <p>La musique est un espace où même les personnes les plus discrètes peuvent s'exprimer et rayonner. Tom en est la preuve vivante. Réservé dans la vie de tous les jours, il se transforme complètement dès qu'il prend sa guitare en main. Sur scène, il ne joue pas seulement des notes : il transmet une énergie, une émotion et une passion qu'il offre au public. Chaque solo improvisé raconte ses heures de travail, sa persévérance et l'amour qu'il met dans sa musique. Toujours prêt à se dépasser, Tom a appris la basse pour soutenir le groupe et enrichir le projet collectif.</p>
+          <p data-i18n="bio.tom">La musique est un espace où même les personnes les plus discrètes peuvent s'exprimer et rayonner. Tom en est la preuve vivante. Réservé dans la vie de tous les jours, il se transforme complètement dès qu'il prend sa guitare en main. Sur scène, il ne joue pas seulement des notes : il transmet une énergie, une émotion et une passion qu'il offre au public. Chaque solo improvisé raconte ses heures de travail, sa persévérance et l'amour qu'il met dans sa musique. Toujours prêt à se dépasser, Tom a appris la basse pour soutenir le groupe et enrichir le projet collectif.</p>
         </div>
       </div>
 
@@ -80,7 +86,7 @@ Afin de communiquer pleinement leur passion pour la musique, ils diffuseront pro
         </div>
         <h2>Vittorio</h2>
         <div class="membre-bio">
-          <p>Musicien depuis l'âge de 6 ans, d'abord avec le violon, Vittorio a trouvé sa véritable voie à douze ans en s'installant derrière une batterie. Une passion sans doute héritée de son père, lui-même batteur dans un groupe de rock, mais que Vittorio a su faire sienne en apprenant en autodidacte, à force d'écoute, d'instinct et d'heures passées derrière les fûts. Sur scène, son objectif est simple et sincère : kiffer, et transmettre cette énergie au public jusqu'à la dernière note. Entre puissance et précision, Vittorio est le moteur qui fait vibrer le groupe.</p>
+          <p data-i18n="bio.vittorio">Musicien depuis l'âge de 6 ans, d'abord avec le violon, Vittorio a trouvé sa véritable voie à douze ans en s'installant derrière une batterie. Une passion sans doute héritée de son père, lui-même batteur dans un groupe de rock, mais que Vittorio a su faire sienne en apprenant en autodidacte, à force d'écoute, d'instinct et d'heures passées derrière les fûts. Sur scène, son objectif est simple et sincère : kiffer, et transmettre cette énergie au public jusqu'à la dernière note. Entre puissance et précision, Vittorio est le moteur qui fait vibrer le groupe.</p>
         </div>
       </div>
 
@@ -88,50 +94,50 @@ Afin de communiquer pleinement leur passion pour la musique, ils diffuseront pro
   </section>
 
   <section class="concerts mb-5">
-    <h1 class="mb-5 mt-5">Concerts</h1>
-    <p class="mb-5">Que la musique vous touche à travers des textes résonnants ou des riffs entraînants, peu importe, The BANNED donne tout sur scène, offrant au public un espace de transmission mais aussi tout simplement un moyen de lâcher-prise.</p>
+    <h1 class="mb-5 mt-5" data-i18n="concerts.title">Concerts</h1>
+    <p class="mb-5" data-i18n="concerts.intro">Que la musique vous touche à travers des textes résonnants ou des riffs entraînants, peu importe, The BANNED donne tout sur scène, offrant au public un espace de transmission mais aussi tout simplement un moyen de lâcher-prise.</p>
     <div class="concerts-grid">
 
       <div class="date">
         <h2>11 juin 2026</h2>
-        <p><a href="https://festineuch.ch/programme/">Festi'neuch</a>, scène de la marée</p>
+        <p data-i18n-html="concerts.festineuch"><a href="https://festineuch.ch/programme/">Festi'neuch</a>, scène de la marée</p>
       </div>
 
       <div class="date">
         <h2>19 juin 2026</h2>
-        <p><a href="https://fdlm.ch/le-programme/">Fête de la Musique</a>, Neuchâtel</p>
+        <p data-i18n-html="concerts.fdlm"><a href="https://fdlm.ch/le-programme/">Fête de la Musique</a>, Neuchâtel</p>
       </div>
 
       <div class="date">
         <h2>2 juillet 2026</h2>
-        <p>Baccalauréat du LDDR, Neuchâtel</p>
+        <p data-i18n="concerts.lddr">Baccalauréat du LDDR, Neuchâtel</p>
       </div>
 
       <div class="date">
         <h2>3 juillet 2026</h2>
-        <p>Brasserie du Groin, Marin</p>
+        <p data-i18n="concerts.groin">Brasserie du Groin, Marin</p>
       </div>
 
       <div class="date">
         <h2>22 août 2026</h2>
-        <p><a href="https://musicovignes.ch/artiste/the-banned/">Music Ô Vignes</a>, Cressier, scène du Château (16h45)</p>
+        <p data-i18n-html="concerts.mov"><a href="https://musicovignes.ch/artiste/the-banned/">Music Ô Vignes</a>, Cressier, scène du Château (16h45)</p>
       </div>
 
     </div>
   </section>
 
   <section class="photos mb-5">
-    <h1 class="mb-5 mt-5">Gallerie</h1>
+    <h1 class="mb-5 mt-5" data-i18n="gallery.title">Gallerie</h1>
     <div class="photo-events-grid">
 
       <div class="photo-event" onclick="togglePhotoEvent(this)">
         <div class="photo-event-thumb">
-          <img src="images/DJT_2026/2026_DJT_BANNED_PRESS_7821.jpg" alt="Résidence Dimension Jeune Talent 2026">
+          <img src="images/DJT_2026/2026_DJT_BANNED_PRESS_7821.jpg" alt="Résidence Dimension Jeune Talent 2026" data-i18n-alt="gallery.djt.alt">
           <div class="photo-event-overlay"><span>+</span></div>
         </div>
-        <h2>Résidence Dimension Jeune Talent 2026</h2>
+        <h2 data-i18n="gallery.djt.title">Résidence Dimension Jeune Talent 2026</h2>
         <div class="photo-event-gallery">
-        <h3>Credit : Audrey Gerber</h3>
+        <h3 data-i18n="gallery.credit.audrey">Credit : Audrey Gerber</h3>
           <div class="photos-grid">
             <div class="photo-item"><img src="images/DJT_2026/2026_DJT_BANNED_COACHING_4868.jpg" alt=""/></div>
             <div class="photo-item"><img src="images/DJT_2026/2026_DJT_BANNED_COACHING_4935.jpg" alt=""/></div>
@@ -153,29 +159,29 @@ Afin de communiquer pleinement leur passion pour la musique, ils diffuseront pro
 
       <div class="photo-event" onclick="togglePhotoEvent(this)">
         <div class="photo-event-thumb">
-          <img src="images/Festi_neuch_2026/The%20BANNED%20Photo%20of%20Anokhi%20Festi_neuch.jpg" alt="Festi'neuch 2026">
+          <img src="images/Festi_neuch_2026/The%20BANNED%20Photo%20of%20Anokhi%20Festi_neuch.jpg" alt="Festi'neuch 2026" data-i18n-alt="gallery.festineuch.alt">
           <div class="photo-event-overlay"><span>+</span></div>
         </div>
-        <h2>Festi'neuch 2026</h2>
+        <h2 data-i18n="gallery.festineuch.title">Festi'neuch 2026</h2>
         <div class="photo-event-gallery">
-          <h3>Credit : Evan</h3>
+          <h3 data-i18n="gallery.credit.evan">Credit : Evan</h3>
           <div class="photos-grid">
             <div class="photo-item"><img src="images/Festi_neuch_2026/The%20BANNED%20Photo%20of%20Anokhi%20Festi_neuch%203.jpg" alt=""/></div>
             <div class="photo-item"><img src="images/Festi_neuch_2026/The%20BANNED%20Photo%20of%20Livio%20Festi_neuch%202.jpg" alt=""/></div>
             <div class="photo-item"><img src="images/Festi_neuch_2026/The%20BANNED%20Photo%20of%20Vittorio%20Festi_neuch%202.jpg" alt=""/></div>
           </div>
-          <h3>Credit : Selma Mehlum</h3>
+          <h3 data-i18n="gallery.credit.selma">Credit : Selma Mehlum</h3>
           <div class="photos-grid">
             <div class="photo-item"><img src="images/Festi_neuch_2026/The%20BANNED%20Photo%20of%20Anokhi%20Festi_neuch%202.jpg" alt=""/></div>
             <div class="photo-item"><img src="images/Festi_neuch_2026/The%20BANNED%20Photo%20of%20Anokhi%20Festi_neuch.jpg" alt=""/></div>
             <div class="photo-item"><img src="images/Festi_neuch_2026/The%20BANNED%20Photo%20of%20Tom%20Festi_neuch.jpg" alt=""/></div>
           </div>
-          <h3>Credit : Marisa</h3>
+          <h3 data-i18n="gallery.credit.marisa">Credit : Marisa</h3>
           <div class="photos-grid">
             <div class="photo-item"><img src="images/Festi_neuch_2026/The%20BANNED%20Photo%20of%20Livio%20Festi_neuch.jpg" alt=""/></div>
             <div class="photo-item"><img src="images/Festi_neuch_2026/The%20BANNED%20Photo%20of%20Vittorio%20Festi_neuch.jpg" alt=""/></div>
           </div>
-          <h3>Credit : Kean Walmsley</h3>
+          <h3 data-i18n="gallery.credit.kean">Credit : Kean Walmsley</h3>
           <div class="photos-grid photos-grid--videos">
             <div class="photo-item photo-item--video">
               <video controls playsinline preload="metadata">
@@ -216,12 +222,12 @@ Afin de communiquer pleinement leur passion pour la musique, ils diffuseront pro
     <div class="photo-events-grid photo-events-grid--row">
       <div class="photo-event" onclick="togglePhotoEvent(this)">
         <div class="photo-event-thumb">
-          <img src="images/Play_for_BBM_2025/The%20BANNED%20Photo%20of%20Livio%20Play%20for%20BBM%204.jpg" alt="Play for BBM 2025">
+          <img src="images/Play_for_BBM_2025/The%20BANNED%20Photo%20of%20Livio%20Play%20for%20BBM%204.jpg" alt="Play for BBM 2025" data-i18n-alt="gallery.bbm.alt">
           <div class="photo-event-overlay"><span>+</span></div>
         </div>
-        <h2>Play for BBM 2025</h2>
+        <h2 data-i18n="gallery.bbm.title">Play for BBM 2025</h2>
         <div class="photo-event-gallery">
-          <h3>Credit : Cédric Guillod</h3>
+          <h3 data-i18n="gallery.credit.cedric">Credit : Cédric Guillod</h3>
           <div class="photos-grid">
             <div class="photo-item"><img src="images/Play_for_BBM_2025/The%20BANNED%20Photo%20of%20Anokhi%20Play%20for%20BBM.jpg" alt=""/></div>
             <div class="photo-item"><img src="images/Play_for_BBM_2025/The%20BANNED%20Photo%20of%20Anokhi%20Play%20for%20BBM%202.jpg" alt=""/></div>
@@ -249,7 +255,7 @@ Afin de communiquer pleinement leur passion pour la musique, ils diffuseront pro
   </section>
 
   <section class="songs mb-5">
-    <h1 class="mb-5 mt-5">Songs</h1>
+    <h1 class="mb-5 mt-5" data-i18n="songs.title">Songs</h1>
     <div class="songs-list">
 
       <div class="song">
@@ -262,9 +268,9 @@ Afin de communiquer pleinement leur passion pour la musique, ils diffuseront pro
           </span>
         </button>
         <div class="song-details">
-          <a href="https://open.spotify.com/track/0dJpvIPDJo9jc0tiWubaOI?autoplay_ok=1" class="song-listen" target="_blank" rel="noopener noreferrer">Écouter sur Spotify</a>
+          <a href="https://open.spotify.com/track/0dJpvIPDJo9jc0tiWubaOI?autoplay_ok=1" class="song-listen" target="_blank" rel="noopener noreferrer" data-i18n="songs.listen">Écouter sur Spotify</a>
           <br/>
-          <p class="song-author">Paroles : Anokhi</p>
+          <p class="song-author" data-i18n="songs.lyricsBy">Paroles : Anokhi</p>
           <div class="song-lyrics">
             <p>Don't wanna go out I want to stay curl up in bed<br/>
 I want to bundle under the sheets and spend my day crying<br/>
@@ -333,9 +339,9 @@ I can't sleep</p>
           </span>
         </button>
         <div class="song-details">
-          <a href="https://open.spotify.com/track/6IxfL9NFsBHwYZ1fu59dLA?autoplay_ok=1" class="song-listen" target="_blank" rel="noopener noreferrer">Écouter sur Spotify</a>
+          <a href="https://open.spotify.com/track/6IxfL9NFsBHwYZ1fu59dLA?autoplay_ok=1" class="song-listen" target="_blank" rel="noopener noreferrer" data-i18n="songs.listen">Écouter sur Spotify</a>
           <br/>
-          <p class="song-author">Paroles : Anokhi</p>
+          <p class="song-author" data-i18n="songs.lyricsBy">Paroles : Anokhi</p>
           <div class="song-lyrics">
             <p>Oh, I'm tired of the blame game<br/>
 Don't you feel ashamed<br/>
@@ -380,9 +386,9 @@ You said you'd come back eventually, I won't be waiting</p>
           </span>
         </button>
         <div class="song-details">
-          <a href="https://open.spotify.com/track/7rAdb0f4NxlsmfNcBuBDur?autoplay_ok=1" class="song-listen" target="_blank" rel="noopener noreferrer">Écouter sur Spotify</a>
+          <a href="https://open.spotify.com/track/7rAdb0f4NxlsmfNcBuBDur?autoplay_ok=1" class="song-listen" target="_blank" rel="noopener noreferrer" data-i18n="songs.listen">Écouter sur Spotify</a>
           <br/>
-          <p class="song-author">Paroles : Anokhi</p>
+          <p class="song-author" data-i18n="songs.lyricsBy">Paroles : Anokhi</p>
           <div class="song-lyrics">
             <p>Every time I look at my phone and see a message<br/>
 I feel a wilting of my love<br/>
@@ -442,9 +448,9 @@ Hey shooting star</p>
           </span>
         </button>
         <div class="song-details">
-          <a href="https://open.spotify.com/artist/4gwgRLG6PWDul3By2KJIFf" class="song-listen" target="_blank" rel="noopener noreferrer">Bientôt sur Spotify</a>
+          <a href="https://open.spotify.com/artist/4gwgRLG6PWDul3By2KJIFf" class="song-listen" target="_blank" rel="noopener noreferrer" data-i18n="songs.comingSoon">Bientôt sur Spotify</a>
           <br/>
-          <p class="song-author">Paroles : Anokhi</p>
+          <p class="song-author" data-i18n="songs.lyricsBy">Paroles : Anokhi</p>
           <div class="song-lyrics">
             <p>I'm an open book<br/>
 Just need to take a look<br/>
@@ -531,9 +537,9 @@ Bla bla bla bla bla</p>
           </span>
         </button>
         <div class="song-details">
-          <a href="https://open.spotify.com/artist/4gwgRLG6PWDul3By2KJIFf" class="song-listen" target="_blank" rel="noopener noreferrer">Bientôt sur Spotify</a>
+          <a href="https://open.spotify.com/artist/4gwgRLG6PWDul3By2KJIFf" class="song-listen" target="_blank" rel="noopener noreferrer" data-i18n="songs.comingSoon">Bientôt sur Spotify</a>
           <br/>
-          <p class="song-author">Paroles : Anokhi</p>
+          <p class="song-author" data-i18n="songs.lyricsBy">Paroles : Anokhi</p>
           <div class="song-lyrics">
             <p>Lost in the desert of your love<br/>
 Don't know where I am not<br/>
@@ -570,9 +576,9 @@ Ah ah</p>
           </span>
         </button>
         <div class="song-details">
-          <a href="https://open.spotify.com/artist/4gwgRLG6PWDul3By2KJIFf" class="song-listen" target="_blank" rel="noopener noreferrer">Bientôt sur Spotify</a>
+          <a href="https://open.spotify.com/artist/4gwgRLG6PWDul3By2KJIFf" class="song-listen" target="_blank" rel="noopener noreferrer" data-i18n="songs.comingSoon">Bientôt sur Spotify</a>
           <br/>
-          <p class="song-author">Paroles : Anokhi</p>
+          <p class="song-author" data-i18n="songs.lyricsBy">Paroles : Anokhi</p>
           <div class="song-lyrics">
             <p>She hides behind her big smile<br/>
 She laughs and jokes like everything is fine<br/>
@@ -619,8 +625,8 @@ Sunshine Hurricane</p>
 
 <footer>
   <div class="merci">
-    <h1>Nous remercions</h1>
-    <p>Nos familles et nos amis<br/>
+    <h1 data-i18n="footer.thanks.title">Nous remercions</h1>
+    <p data-i18n-html="footer.thanks.list">Nos familles et nos amis<br/>
     BBM 74 et leurs professeurs géniaux<br/>
     Festi'neuch<br/>
     La Case à Chocs<br/>
@@ -634,7 +640,7 @@ Sunshine Hurricane</p>
     <img src="images/icons/banned_logo_blanc.png" alt="logo">
   </a>
   <div class="contact">
-    <h1>Nous contacter</h1>
+    <h1 data-i18n="footer.contact.title">Nous contacter</h1>
     <div class="contact-links">
       <a href="https://www.instagram.com/the_banned_official_music?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
         <img src="images/icons/instagram.webp" alt="instagram">
@@ -644,11 +650,11 @@ Sunshine Hurricane</p>
       </a>
     </div>
   </div>
-  <p class="footer-copyright">&copy; 2026 The BANNED. Tous droits r&eacute;serv&eacute;s.</p>
+  <p class="footer-copyright" data-i18n="footer.copyright">&copy; 2026 The BANNED. Tous droits r&eacute;serv&eacute;s.</p>
 </footer>
 
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-  <button class="lightbox-close" type="button" aria-label="Fermer">&times;</button>
+  <button class="lightbox-close" type="button" data-i18n-aria="lightbox.close" aria-label="Fermer">&times;</button>
   <img class="lightbox-image" src="" alt="">
 </div>
 
