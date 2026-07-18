@@ -159,6 +159,7 @@ main {
 /* ── CONCERTS ── */
 .concerts {
   width: min(1000px, 90%);
+  padding: 0 1rem;
   text-align: center;
 }
 .concerts p {
