@@ -158,9 +158,12 @@ main {
 
 /* ── CONCERTS ── */
 .concerts {
-  width: 100%;
-  padding: 0 5%;
+  width: min(1000px, 90%);
   text-align: center;
+}
+.concerts p {
+  width: 100%;
+  text-align: left;
 }
 .concerts-grid {
   display: grid;
