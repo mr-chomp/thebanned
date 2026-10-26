@@ -1,5 +1,6 @@
 const I18N_STORAGE_KEY = 'thebanned-lang';
 const SUPPORTED_LANGS = ['fr', 'en', 'de'];
+const DATE_LOCALES = { fr: 'fr-CH', en: 'en-GB', de: 'de-CH' };
 
 let currentLang = 'fr';
 let strings = {};
@@ -47,6 +48,24 @@ function closeOpenPanels() {
   });
 }
 
+function formatConcertDates() {
+  const locale = DATE_LOCALES[currentLang] ?? currentLang;
+  const fmt = new Intl.DateTimeFormat(locale, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+
+  document.querySelectorAll('.date time[datetime]').forEach(el => {
+    const parts = el.getAttribute('datetime').split('-').map(Number);
+    if (parts.length !== 3 || parts.some(n => Number.isNaN(n))) {
+      return;
+    }
+    const [year, month, day] = parts;
+    el.textContent = fmt.format(new Date(year, month - 1, day));
+  });
+}
+
 function applyTranslations() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const value = t(el.dataset.i18n);
@@ -76,6 +95,7 @@ function applyTranslations() {
   });
 
   document.title = t('meta.title');
+  formatConcertDates();
   updateLangToggleState();
 }
 
