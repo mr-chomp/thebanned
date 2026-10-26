@@ -31,38 +31,65 @@ function t(key) {
 }
 
 function closeOpenPanels() {
-  const openMembre = document.querySelector('.membre.open');
-  if (openMembre && typeof toggleBio === 'function') {
-    toggleBio(openMembre);
-  }
-
-  const openPhotoEvent = document.querySelector('.photo-event.open');
-  if (openPhotoEvent && typeof togglePhotoEvent === 'function') {
-    togglePhotoEvent(openPhotoEvent);
-  }
-
-  document.querySelectorAll('.song.open .song-header').forEach(button => {
-    if (typeof toggleSong === 'function') {
-      toggleSong(button);
+  try {
+    const openMembre = document.querySelector('.membre.open');
+    if (openMembre && typeof toggleBio === 'function') {
+      toggleBio(openMembre);
     }
-  });
+
+    const openPhotoEvent = document.querySelector('.photo-event.open');
+    if (openPhotoEvent && typeof togglePhotoEvent === 'function') {
+      togglePhotoEvent(openPhotoEvent);
+    }
+
+    document.querySelectorAll('.song.open .song-header').forEach(button => {
+      if (typeof toggleSong === 'function') {
+        toggleSong(button);
+      }
+    });
+  } catch {
+    // Keep language switch working even if a panel fails to close.
+  }
+}
+
+function parseIsoDate(iso) {
+  if (typeof iso !== 'string') {
+    return null;
+  }
+  const parts = iso.split('-').map(Number);
+  if (parts.length !== 3 || parts.some(n => Number.isNaN(n))) {
+    return null;
+  }
+  const [year, month, day] = parts;
+  return new Date(year, month - 1, day);
 }
 
 function formatConcertDates() {
   const locale = DATE_LOCALES[currentLang] ?? currentLang;
-  const fmt = new Intl.DateTimeFormat(locale, {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  });
+  let fmt;
+  try {
+    fmt = new Intl.DateTimeFormat(locale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
+  } catch {
+    return;
+  }
 
-  document.querySelectorAll('.date time[datetime]').forEach(el => {
-    const parts = el.getAttribute('datetime').split('-').map(Number);
-    if (parts.length !== 3 || parts.some(n => Number.isNaN(n))) {
+  document.querySelectorAll('[data-i18n-date]').forEach(el => {
+    const date = parseIsoDate(el.dataset.i18nDate);
+    if (!date) {
       return;
     }
-    const [year, month, day] = parts;
-    el.textContent = fmt.format(new Date(year, month - 1, day));
+    const formatted = fmt.format(date);
+    const timeEl = el.querySelector('time');
+    if (timeEl) {
+      timeEl.dateTime = el.dataset.i18nDate;
+      timeEl.textContent = formatted;
+    } else {
+      el.textContent = formatted;
+    }
   });
 }
 
@@ -124,7 +151,16 @@ async function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem(I18N_STORAGE_KEY, lang);
   document.documentElement.lang = lang;
-  await loadLocale(lang);
+
+  try {
+    await loadLocale(lang);
+  } catch {
+    currentLang = 'fr';
+    document.documentElement.lang = 'fr';
+    localStorage.setItem(I18N_STORAGE_KEY, 'fr');
+    await loadLocale('fr');
+  }
+
   applyTranslations();
 }
 
